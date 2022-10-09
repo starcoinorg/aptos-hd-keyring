@@ -10,7 +10,7 @@ const log = require('loglevel')
 const hdPathString = `m/44'/637'/0'/0'`
 const type = 'Aptos HD Key Tree'
 
-class HdKeyring extends SimpleKeyring {
+class HdKeyringAptos extends SimpleKeyring {
 
   /* PUBLIC METHODS */
   constructor(opts = {}) {
@@ -155,5 +155,5 @@ class HdKeyring extends SimpleKeyring {
   }
 }
 
-HdKeyring.type = type
-module.exports = HdKeyring
+HdKeyringAptos.type = type
+module.exports = HdKeyringAptos

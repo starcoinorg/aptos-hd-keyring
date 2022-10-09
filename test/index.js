@@ -1,7 +1,7 @@
 const assert = require('assert')
 const sigUtil = require('eth-sig-util')
 const ethUtil = require('ethereumjs-util')
-const HdKeyring = require('..')
+const HdKeyringAptos = require('..')
 
 // Sample account:
 const privKeyHex = 'b8a9c05beeedb25df85f8d641538cbffedf67216048de9c678ee26260eb91952'
@@ -15,12 +15,12 @@ describe('hd-keyring', function () {
 
   let keyring
   beforeEach(function () {
-    keyring = new HdKeyring()
+    keyring = new HdKeyringAptos()
   })
 
   describe('getReceiptIdentifier', function () {
     it('constructs', function (done) {
-      keyring = new HdKeyring({
+      keyring = new HdKeyringAptos({
         mnemonic: 'vital fun cereal burden announce claim awkward foster wash mass gap rebuild',
         numberOfAccounts: 1,
       })
@@ -39,7 +39,7 @@ describe('hd-keyring', function () {
 
   describe('getReceiptIdentifiers', function () {
     it('constructs', function (done) {
-      keyring = new HdKeyring({
+      keyring = new HdKeyringAptos({
         mnemonic: 'vital fun cereal burden announce claim awkward foster wash mass gap rebuild',
         numberOfAccounts: 2,
       })
@@ -65,7 +65,7 @@ describe('hd-keyring', function () {
 
   describe('exportAccount', function () {
     it('constructs', function (done) {
-      keyring = new HdKeyring({
+      keyring = new HdKeyringAptos({
         mnemonic: 'vital fun cereal burden announce claim awkward foster wash mass gap rebuild',
         numberOfAccounts: 2,
       })
@@ -84,7 +84,7 @@ describe('hd-keyring', function () {
 
   describe('constructor', function () {
     it('constructs', function (done) {
-      keyring = new HdKeyring({
+      keyring = new HdKeyringAptos({
         mnemonic: sampleMnemonic,
         numberOfAccounts: 2,
       })
@@ -100,7 +100,7 @@ describe('hd-keyring', function () {
 
   describe('Keyring.type', function () {
     it('is a class property that returns the type string.', function () {
-      const { type } = HdKeyring
+      const { type } = HdKeyringAptos
       assert.equal(typeof type, 'string')
     })
   })
@@ -108,7 +108,7 @@ describe('hd-keyring', function () {
   describe('#type', function () {
     it('returns the correct value', function () {
       const { type } = keyring
-      const correct = HdKeyring.type
+      const correct = HdKeyringAptos.type
       assert.equal(type, correct)
     })
   })
@@ -186,7 +186,7 @@ describe('hd-keyring', function () {
 
       keyring.getAccounts()
         .then((output) => {
-          assert.equal(output[0], `0x${desiredOutput}`)
+          assert.equal(output[0], `0x${ desiredOutput }`)
           assert.equal(output.length, 1)
           done()
         })
@@ -363,14 +363,14 @@ describe('hd-keyring', function () {
 
       for (let i = 0; i < 1e3; i++) {
 
-        keyring = new HdKeyring({
+        keyring = new HdKeyringAptos({
           numberOfAccounts: 1,
         })
         const originalAccounts = await keyring.getAccounts()
         const serialized = await keyring.serialize()
         const mnemonic = serialized.mnemonic
 
-        keyring = new HdKeyring({
+        keyring = new HdKeyringAptos({
           numberOfAccounts: 1,
           mnemonic,
         })
@@ -392,7 +392,7 @@ describe('hd-keyring', function () {
     it('should return a public address custom to the provided app key origin', async function () {
       const address = firstAcct
 
-      keyring = new HdKeyring({
+      keyring = new HdKeyringAptos({
         mnemonic: sampleMnemonic,
         numberOfAccounts: 1,
       })
@@ -406,7 +406,7 @@ describe('hd-keyring', function () {
     })
 
     it('should return different addresses when provided different app key origins', async function () {
-      keyring = new HdKeyring({
+      keyring = new HdKeyringAptos({
         mnemonic: sampleMnemonic,
         numberOfAccounts: 1,
       })
@@ -425,7 +425,7 @@ describe('hd-keyring', function () {
     })
 
     it('should return the same address when called multiple times with the same params', async function () {
-      keyring = new HdKeyring({
+      keyring = new HdKeyringAptos({
         mnemonic: sampleMnemonic,
         numberOfAccounts: 1,
       })
