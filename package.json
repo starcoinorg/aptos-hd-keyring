@@ -1,7 +1,7 @@
 {
-  "name": "@starcoin/stc-hd-keyring",
+  "name": "@starcoin/aptos-hd-keyring",
   "version": "1.5.3",
-  "description": "A simple standard interface for a seed phrase generated set of Starcoin accounts.",
+  "description": "A simple standard interface for a seed phrase generated set of Aptos accounts.",
   "engines": {
     "node": ">= 10"
   },
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/starcoinorg/stc-hd-keyring.git"
+    "url": "git+ssh://git@github.com/starcoinorg/aptos-hd-keyring.git"
   },
   "keywords": [
     "starcoin",
@@ -22,14 +22,14 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/starcoinorg/stc-hd-keyring/issues"
+    "url": "https://github.com/starcoinorg/aptos-hd-keyring/issues"
   },
-  "homepage": "https://github.com/starcoinorg/stc-hd-keyring#readme",
+  "homepage": "https://github.com/starcoinorg/aptos-hd-keyring#readme",
   "dependencies": {
     "@ethersproject/bytes": "^5.0.6",
     "@starcoin/starcoin": "^1.6.2",
     "@starcoin/stc-simple-keyring": "^1.5.3",
-    "@starcoin/stc-util": "^0.3.0",
+    "@starcoin/stc-util": "^0.6.0",
     "@starcoin/stc-wallet": "^1.2.2",
     "bip39": "^2.2.0",
     "eth-sig-util": "^3.0.1",
