@@ -7,8 +7,8 @@ const sigUtil = require('eth-sig-util')
 const log = require('loglevel')
 
 // Options:
-const hdPathString = `m/44'/101010'/0'/0'`
-const type = 'HD Key Tree'
+const hdPathString = `m/44'/637'/0'/0'`
+const type = 'Aptos HD Key Tree'
 
 class HdKeyring extends SimpleKeyring {
 
